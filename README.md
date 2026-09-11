@@ -4,7 +4,7 @@ The following repository only contains the overview of the load balancer archite
 ### Architecture
 The load balancer will be separated into two distinct components: the load balancer process and the web server cluster. The load balancer process will be responsible for handling incoming requests, distributing them to the web server cluster, and receiving responses from the web server cluster and sending them back to the clients. The web server cluster will be responsible for harboring and managing available web servers. The architecture will resemble the following diagram.
 
-![Load Balancer Architecture Diagram](/docs/resources/architecture.png)
+![Load Balancer Architecture Diagram](/architecture.png)
 
 There will be 5 main steps in general.
 
@@ -17,7 +17,7 @@ There will be 5 main steps in general.
 ### Flow Chart
 As request processing will always precede response handling, this will be a single subprocess within the process flow. This means the load balancer process will separate into three different subprocess loops after initialization. This is reflected in the following.
 
-![Load Balancer Flow Chart](/docs/resources/flowchart.png)
+![Load Balancer Flow Chart](/flowchart.png)
 
 As shown by the three outwards arrows from "Web Server Allocator allocates default number of servers." step, this will require the three subprocesses to run in parallel.
 
